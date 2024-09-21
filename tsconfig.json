@@ -1,0 +1,15 @@
+{
+	"compilerOptions": {
+		"skipLibCheck": true,
+		"declaration": true,
+		"declarationMap": true,
+		"module": "ES2015",
+		"moduleResolution": "bundler",
+		"types": ["vitest/globals"],
+	},
+	"files": [],
+	"references": [
+		{ "path": "./tsconfig.app.json" },
+		{ "path": "./tsconfig.node.json" }
+	]
+}

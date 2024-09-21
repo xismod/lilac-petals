@@ -1,0 +1,98 @@
+{
+	"name": "-lilac-petals",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"source": "./src/index.ts",
+	"main":  "dist/index.cjs",
+	"module":  "dist/index.js",
+	"files":  [
+        "dist",
+        "src",
+        "package.json",
+        "CHANGELOG",
+        "README.md"
+    ],
+
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc -b && vite build",
+		"lint": "eslint .",
+		"preview": "vite preview",
+		"storybook": "storybook dev -p 6006",
+		"build-storybook": "storybook build",
+		"test": "vitest",
+		"changeset": "changeset add",
+		"publish":  "changeset publish",
+		"version":  "changeset version"
+	},
+	"peerDependencies": {
+		"@tamagui/core": "^1.111.11",
+		"@tamagui/metro-plugin": "^1.91.4",
+		"@tamagui/vite-plugin": "^1.111.11",
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1",
+		"react-native": "^0.75.3"
+	},
+	"peerDependenciesMeta": {
+		"react-dom": {
+			"optional": true
+		},
+		"react-native": {
+			"optional": true
+		},
+		"@tamagui/vite-plugin": {
+			"optional": true
+		},
+		"@tamagui/metro-plugin": {
+			"optional": true
+		}
+	},
+	"devDependencies": {
+		"@changesets/cli": "^2.27.8",
+		"@chromatic-com/storybook": "1.9.0",
+		"@eslint/js": "^9.9.0",
+		"@storybook/addon-essentials": "8.3.2",
+		"@storybook/addon-interactions": "8.3.2",
+		"@storybook/addon-links": "8.3.2",
+		"@storybook/addon-onboarding": "8.3.2",
+		"@storybook/blocks": "8.3.2",
+		"@storybook/react": "8.3.2",
+		"@storybook/react-vite": "8.3.2",
+		"@storybook/test": "8.3.2",
+		"@tamagui/core": "^1.111.11",
+		"@tamagui/metro-plugin": "^1.91.4",
+		"@tamagui/vite-plugin": "^1.111.11",
+		"@testing-library/jest-dom": "^6.5.0",
+		"@testing-library/react": "^16.0.1",
+		"@types/node": "^22.5.5",
+		"@types/react": "^18.3.3",
+		"@types/react-dom": "^18.3.0",
+		"@vitejs/plugin-react": "^4.3.1",
+		"@vitejs/plugin-react-swc": "^3.5.0",
+		"eslint": "^9.9.0",
+		"eslint-plugin-react-hooks": "^5.1.0-rc.0",
+		"eslint-plugin-react-refresh": "^0.4.9",
+		"eslint-plugin-storybook": "^0.8.0",
+		"expo": "^51.0.32",
+		"expo-linear-gradient": "^13.0.2",
+		"glob": "^11.0.0",
+		"globals": "^15.9.0",
+		"jsdom": "^25.0.0",
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1",
+		"react-native": "^0.75.3",
+		"storybook": "8.3.2",
+		"typescript": "^5.5.3",
+		"typescript-eslint": "^8.0.1",
+		"vite": "^5.4.1",
+		"vite-plugin-dts": "^4.2.1",
+		"vitest": "^2.1.1"
+	},
+	"packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e",
+	"eslintConfig": {
+		"extends": [
+			"plugin:storybook/recommended"
+		]
+	}
+}
