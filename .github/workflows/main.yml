@@ -1,19 +1,19 @@
 # .github/workflows/deploy-github-pages.yaml
- 
+
 # Workflow name
 name: Build and Publish Storybook to GitHub Pages
- 
+
 on:
   # Event for the workflow to run on
   push:
     branches:
       - 'main' # Replace with the branch you want to deploy from
- 
+
 permissions:
   contents: read
   pages: write
   id-token: write
- 
+
 # List of jobs
 jobs:
   deploy:
@@ -22,12 +22,12 @@ jobs:
     steps:
       # Manual Checkout
       - uses: actions/checkout@v4
- 
+
       # Set up Node
       - uses: actions/setup-node@v4
         with:
-          node-version: '16.x'
- 
+          node-version: '21.x'
+
       #👇 Add Storybook build and deploy to GitHub Pages as a step in the workflow
       - uses: bitovi/github-actions-storybook-to-github-pages@v1.0.3
         with:
