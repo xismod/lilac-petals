@@ -10,5 +10,5 @@ type Story = StoryObj<typeof Text>;
 
 export const StoryDefault: Story = {
 	name: "Default",
-	render: (props) => <Text {...props} >penes</Text>,
+	render: (props) => <Text {...props} >test</Text>,
 };
