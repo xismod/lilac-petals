@@ -1,4 +1,4 @@
-import { defineConfig } from "vite";
+import { defineConfig, PluginOption } from "vite";
 import dtsPlugin from "vite-plugin-dts";
 import { dirname, extname, relative, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -29,6 +29,19 @@ const computeAllSrcFiles = (): Record<string, string> => {
 	return Object.fromEntries(paths);
 };
 
+const removeEmptyFiles = (): PluginOption => ({
+  generateBundle(_, bundle) {
+    for (const name in bundle) {
+      const file = bundle[name];
+      if (file.type !== "chunk") return;
+
+      if (file.code.trim() === "") delete bundle[name];
+      if (file.code.trim() === '"use strict";') delete bundle[name];
+    }
+  },
+  name: "remove-empty-files",
+});
+
 // https://vitejs.dev/config/
 export default defineConfig({
 	plugins: [dtsPlugin({
@@ -41,7 +54,9 @@ export default defineConfig({
       "types.d.ts"
     ],
     include: ["src"],
-  }), react()],
+  }),
+  react(),
+  removeEmptyFiles()],
   esbuild: {
     jsxFactory: 'h',
     jsxFragment: 'Fragment',

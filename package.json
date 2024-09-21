@@ -4,16 +4,15 @@
 	"version": "0.0.0",
 	"type": "module",
 	"source": "./src/index.ts",
-	"main":  "dist/index.cjs",
-	"module":  "dist/index.js",
-	"files":  [
-        "dist",
-        "src",
-        "package.json",
-        "CHANGELOG",
-        "README.md"
-    ],
-
+	"main": "dist/index.cjs",
+	"module": "dist/index.js",
+	"files": [
+		"dist",
+		"src",
+		"package.json",
+		"CHANGELOG",
+		"README.md"
+	],
 	"scripts": {
 		"dev": "vite",
 		"build": "tsc -b && vite build",
@@ -23,8 +22,8 @@
 		"build-storybook": "storybook build",
 		"test": "vitest",
 		"changeset": "changeset add",
-		"publish":  "changeset publish",
-		"version":  "changeset version"
+		"publish": "changeset publish",
+		"version": "changeset version"
 	},
 	"peerDependencies": {
 		"@tamagui/core": "^1.111.11",
@@ -32,7 +31,8 @@
 		"@tamagui/vite-plugin": "^1.111.11",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
-		"react-native": "^0.75.3"
+		"react-native": "^0.75.3",
+		"tamagui": "^1.111.11"
 	},
 	"peerDependenciesMeta": {
 		"react-dom": {
@@ -62,6 +62,7 @@
 		"@storybook/test": "8.3.2",
 		"@tamagui/core": "^1.111.11",
 		"@tamagui/metro-plugin": "^1.91.4",
+		"@tamagui/themes": "^1.111.11",
 		"@tamagui/vite-plugin": "^1.111.11",
 		"@testing-library/jest-dom": "^6.5.0",
 		"@testing-library/react": "^16.0.1",
@@ -83,6 +84,7 @@
 		"react-dom": "^18.3.1",
 		"react-native": "^0.75.3",
 		"storybook": "8.3.2",
+		"tamagui": "^1.111.11",
 		"typescript": "^5.5.3",
 		"typescript-eslint": "^8.0.1",
 		"vite": "^5.4.1",
@@ -94,5 +96,9 @@
 		"extends": [
 			"plugin:storybook/recommended"
 		]
+	},
+	"dependencies": {
+		"@tamagui/lucide-icons": "^1.111.11",
+		"react-native-svg": "^15.7.1"
 	}
 }
