@@ -27,10 +27,28 @@ export const TextInputFrame = styled(View, {
     borderRadius: '$md',
     borderColor: '$lilac_light',
     borderWidth: '$1',
+    flexDirection: 'row',
+	alignItems: 'center',
+    paddingInline: '$2',
+
+    hoverStyle: {
+        borderWidth: '$1',
+        borderColor: '$lilac',
+    },
+
+    focusStyle: {
+        borderWidth: '$1',
+        borderColor: '$lilac',
+    },
 });
 
 export const TextInputComponent = styled(Input, {
     borderWidth: '0',
     placeholderTextColor: '$lilac_light',
+
+    focusVisibleStyle: {
+        outlineWidth: '0'
+    },
+    outlineWidth: '0'
 });
 
