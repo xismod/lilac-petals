@@ -1,5 +1,5 @@
 import { createFont, createTamagui, createTokens } from "@tamagui/core";
-import { size } from '@tamagui/themes'
+import { size, space } from '@tamagui/themes'
 
 const robotoFont = createFont({
 	family: 'Roboto, Inter, Helvetica, Arial, sans-serif',
@@ -43,6 +43,7 @@ const tokens = createTokens({
 		sm: 15,
 		md: 20,
 		lg: 25,
+		...space,
 	},
 	color: {
 		white: '#fff',
