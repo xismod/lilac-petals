@@ -1,5 +1,5 @@
 {
-	"name": "-lilac-petals",
+	"name": "lilac-petals",
 	"private": true,
 	"version": "0.0.0",
 	"type": "module",
@@ -100,5 +100,16 @@
 	"dependencies": {
 		"@tamagui/lucide-icons": "^1.111.11",
 		"react-native-svg": "^15.7.1"
-	}
+	},
+	"description": "Design system using tamagui",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/xismod/lilac-petals.git"
+	},
+	"author": "Martin Schoeler",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/xismod/lilac-petals/issues"
+	},
+	"homepage": "https://github.com/xismod/lilac-petals#readme"
 }
