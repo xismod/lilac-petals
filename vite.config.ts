@@ -61,6 +61,9 @@ export default defineConfig({
     jsxFactory: 'h',
     jsxFragment: 'Fragment',
   },
+  define: {
+    'process.env': {}
+  },
 	build: {
 		lib: {
 			entry: resolve(__dirname, "src/main.ts"),
