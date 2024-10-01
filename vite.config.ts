@@ -84,7 +84,6 @@ export default defineConfig({
         "@tamagui/core",
         "@tamagui/vite-plugin",
         "@tamagui/metro-plugin",
-        "tamagui",
       ],
 			input: computeAllSrcFiles(),
 		},
