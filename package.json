@@ -1,7 +1,7 @@
 {
 	"name": "lilac-petals",
 	"private": false,
-	"version": "0.0.9",
+	"version": "0.0.10",
 	"type": "module",
 	"source": "./src/index.ts",
 	"main": "dist/index.cjs",
