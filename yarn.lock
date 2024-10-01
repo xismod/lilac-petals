@@ -3964,7 +3964,7 @@
     "@tamagui/core" "1.111.11"
     "@tamagui/helpers-icon" "1.111.11"
 
-"@tamagui/metro-plugin@^1.91.4":
+"@tamagui/metro-plugin@^1.111.11":
   version "1.112.8"
   resolved "https://registry.yarnpkg.com/@tamagui/metro-plugin/-/metro-plugin-1.112.8.tgz#da799dc9e850bf3312549a47b3225ea0239a2dc9"
   integrity sha512-zsq3yoeqZnTQrO4Fdbd/TEEc7gsCX1oa7V8k7H7qv/4A/LQKG9ARi5l4CcmPmMerjbiHsK7NqrBP7JujHkeD7g==
