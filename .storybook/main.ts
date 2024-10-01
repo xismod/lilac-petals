@@ -36,9 +36,9 @@ core: {
 viteFinal: (config, { configType }) => {
 	config.define = {
 		...config.define,
-		"process.env.NODE_ENV":
+		"import.meta.env.NODE_ENV":
 		configType === "PRODUCTION" ? "production" : "development",
-		"process.env.STORYBOOK": true,
+		"import.meta.env.STORYBOOK": true,
 	};
 
 	config.plugins!.push(

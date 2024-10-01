@@ -1,4 +1,4 @@
-import { defineConfig, PluginOption } from "vite";
+import { defineConfig, PluginOption, loadEnv } from "vite";
 import dtsPlugin from "vite-plugin-dts";
 import { dirname, extname, relative, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -43,49 +43,52 @@ const removeEmptyFiles = (): PluginOption => ({
   name: "remove-empty-files",
 });
 
+export default ({ mode }: {mode: string}) => {
+  const env = loadEnv(mode, process.cwd(), "");
 // https://vitejs.dev/config/
-export default defineConfig({
-	plugins: [dtsPlugin({
-    exclude: [
-      "node_modules",
-      "src/**/*.stories.tsx",
-      "src/**/__tests/**",
-      "src/**/*.test.{ts,tsx}",
-      "src/setup-tests.ts",
-      "types.d.ts"
-    ],
-    include: ["src"],
-  }),
-  react(),
-  reactNativeWeb(),
-  removeEmptyFiles()],
-  esbuild: {
-    jsxFactory: 'h',
-    jsxFragment: 'Fragment',
-  },
-  define: {
-    'process.env': {}
-  },
-	build: {
-		lib: {
-			entry: resolve(__dirname, "src/main.ts"),
-			formats: ["cjs", "es"],
-			fileName(format, entryName) {
-				if (format === "es") return `${entryName}.js`;
-				return `${entryName}.${format}`;
-			},
-		},
-		rollupOptions: {
-			external: [
-        "react",
-        "react/jsx-runtime",
-        "react-dom",
-        "react-native",
-        "@tamagui/core",
-        "@tamagui/vite-plugin",
-        "@tamagui/metro-plugin",
-      ],
-			input: computeAllSrcFiles(),
-		},
-	},
-});
+    return defineConfig({
+      plugins: [dtsPlugin({
+        exclude: [
+          "node_modules",
+          "src/**/*.stories.tsx",
+          "src/**/__tests/**",
+          "src/**/*.test.{ts,tsx}",
+          "src/setup-tests.ts",
+          "types.d.ts"
+        ],
+        include: ["src"],
+      }),
+      react(),
+      reactNativeWeb(),
+      removeEmptyFiles()],
+      esbuild: {
+        jsxFactory: 'h',
+        jsxFragment: 'Fragment',
+      },
+      define: {
+        "process.env": env,
+      },
+      build: {
+        lib: {
+          entry: resolve(__dirname, "src/main.ts"),
+          formats: ["cjs", "es"],
+          fileName(format, entryName) {
+            if (format === "es") return `${entryName}.js`;
+            return `${entryName}.${format}`;
+          },
+        },
+        rollupOptions: {
+          external: [
+            "react",
+            "react/jsx-runtime",
+            "react-dom",
+            "react-native",
+            "@tamagui/core",
+            "@tamagui/vite-plugin",
+            "@tamagui/metro-plugin",
+          ],
+          input: computeAllSrcFiles(),
+        },
+      },
+    });
+}
