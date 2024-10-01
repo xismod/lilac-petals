@@ -1,7 +1,7 @@
 {
 	"name": "lilac-petals",
 	"private": false,
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"type": "module",
 	"source": "./src/index.ts",
 	"main": "dist/index.cjs",
@@ -49,6 +49,8 @@
 		}
 	},
 	"devDependencies": {
+		"@babel/core": "^7.0.0",
+		"@babel/preset-env": "^7.1.6",
 		"@changesets/cli": "^2.27.8",
 		"@chromatic-com/storybook": "1.9.0",
 		"@eslint/js": "^9.9.0",
@@ -61,6 +63,7 @@
 		"@storybook/react-vite": "8.3.2",
 		"@storybook/test": "8.3.2",
 		"@tamagui/core": "^1.111.11",
+		"@tamagui/lucide-icons": "^1.111.11",
 		"@tamagui/metro-plugin": "^1.91.4",
 		"@tamagui/themes": "^1.111.11",
 		"@tamagui/vite-plugin": "^1.111.11",
@@ -80,15 +83,20 @@
 		"glob": "^11.0.0",
 		"globals": "^15.9.0",
 		"jsdom": "^25.0.0",
+		"native": "^0.3.3",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
 		"react-native": "^0.75.3",
+		"react-native-reanimated": ">=3.6.2",
+		"react-native-svg": "^15.7.1",
 		"storybook": "8.3.2",
+		"tailwindcss": "~3",
 		"tamagui": "^1.111.11",
 		"typescript": "^5.5.3",
 		"typescript-eslint": "^8.0.1",
 		"vite": "^5.4.1",
 		"vite-plugin-dts": "^4.2.1",
+		"vite-plugin-react-native-web": "^1.1.2",
 		"vitest": "^2.1.1"
 	},
 	"packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e",
@@ -96,10 +104,6 @@
 		"extends": [
 			"plugin:storybook/recommended"
 		]
-	},
-	"dependencies": {
-		"@tamagui/lucide-icons": "^1.111.11",
-		"react-native-svg": "^15.7.1"
 	},
 	"description": "Design system using tamagui",
 	"repository": {
@@ -111,5 +115,8 @@
 	"bugs": {
 		"url": "https://github.com/xismod/lilac-petals/issues"
 	},
-	"homepage": "https://github.com/xismod/lilac-petals#readme"
+	"homepage": "https://github.com/xismod/lilac-petals#readme",
+	"dependencies": {
+		"@tamagui/react-native-media-driver": "^1.112.8"
+	}
 }

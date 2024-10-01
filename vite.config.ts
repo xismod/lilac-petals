@@ -3,6 +3,7 @@ import dtsPlugin from "vite-plugin-dts";
 import { dirname, extname, relative, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { glob } from "glob";
+import reactNativeWeb from "vite-plugin-react-native-web";
 import react from '@vitejs/plugin-react'
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -23,7 +24,7 @@ const computeAllSrcFiles = (): Record<string, string> => {
 			file.slice(0, file.length - extname(file).length)
 		),
 
-		/* value: */ fileURLToPath(new URL(file, import.meta.url)),
+		/* value: */ fileURLToPath(new URL(file, import.meta.url) as never),
 	]);
 
 	return Object.fromEntries(paths);
@@ -56,6 +57,7 @@ export default defineConfig({
     include: ["src"],
   }),
   react(),
+  reactNativeWeb(),
   removeEmptyFiles()],
   esbuild: {
     jsxFactory: 'h',
@@ -80,6 +82,9 @@ export default defineConfig({
         "react-dom",
         "react-native",
         "@tamagui/core",
+        "@tamagui/vite-plugin",
+        "@tamagui/metro-plugin",
+        "tamagui",
       ],
 			input: computeAllSrcFiles(),
 		},
